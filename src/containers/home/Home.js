@@ -7,10 +7,10 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from '../../modules/counter'
+} from '../../actions/counter.actions'
 
 const Home = props => (
-  <div>
+  <div className="container">
     <h1>Home</h1>
     <p>Count: {props.count}</p>
 
