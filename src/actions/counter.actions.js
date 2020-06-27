@@ -1,4 +1,4 @@
-import {counterConstants} from "../constants/counter.constants"
+import { counterConstants } from "../constants/counter.constants";
 
 export const increment = () => {
     return dispatch => {
@@ -10,7 +10,7 @@ export const increment = () => {
             type: counterConstants.INCREMENT
         })
     }
-}
+};
 
 export const incrementAsync = () => {
     return dispatch => {
