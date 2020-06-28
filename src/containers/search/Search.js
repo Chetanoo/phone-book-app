@@ -86,9 +86,9 @@ class Search extends React.Component {
               <ul className="list-group">
                 {searchResults.map((item, index) => (
                   <li className="list-group-item" key={index}>
-                    First name: <strong>{item.firstName}</strong>
+                    First name: <strong>{item.firstName.toUpperCase()}</strong>
                     <br />
-                    Second name: <strong>{item.secondName}</strong>
+                    Second name: <strong>{item.secondName.toUpperCase()}</strong>
                     <br />
                     Phone number: <strong>{item.phoneNumber}</strong>
                   </li>
