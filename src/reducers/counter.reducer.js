@@ -1,4 +1,4 @@
-import {counterConstants} from "../constants/counter.constants"
+import { counterConstants } from "../constants/counter.constants";
 
 const initialState = {
     count: 0,
@@ -6,7 +6,7 @@ const initialState = {
     isDecrementing: false
 }
 
-export default (state = initialState, action) => {
+export const counter = (state = initialState, action) => {
     switch (action.type) {
         case counterConstants.INCREMENT_REQUESTED:
             return {
