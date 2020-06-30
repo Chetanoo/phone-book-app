@@ -1,9 +1,10 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Input from '../../components/Input'
-import { search } from '../../actions/search.actions'
+import { search } from '../../actions/subscriber.actions'
 import './Search.css'
+import Loading from '../../components/Loading'
+import Input from '../../components/Input'
 
 class Search extends React.Component {
   constructor(props) {
@@ -75,11 +76,7 @@ class Search extends React.Component {
           </div>
         </div>
         {loading ? (
-          <div className="container">
-            <div className="row justify-content-center mt-5">
-              <div className="lds-dual-ring">Loading...</div>
-            </div>
-          </div>
+          <Loading />
         ) : (
           <div className="container">
             <div className="row justify-content-center mt-5">
@@ -103,8 +100,8 @@ class Search extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  searchResults: state.search.searchResults,
-  loading: state.search.loading
+  searchResults: state.subscriber.searchResults,
+  loading: state.subscriber.loading
 })
 
 const mapDispatchToProps = dispatch =>

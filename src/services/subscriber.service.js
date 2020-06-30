@@ -26,6 +26,17 @@ const search = data => {
   return fetch(`${API}/search`, requestOptions).then(handleResponse)
 }
 
+const create = data => {
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }
+
+  return fetch(`${API}/create`, requestOptions).then(handleResponse)
+}
+
 export const searchServices = {
-  search
+  search,
+  create
 }

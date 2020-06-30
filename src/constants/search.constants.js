@@ -1,5 +1,0 @@
-export const searchConstants = {
-    SEARCH_REQUEST: 'SEARCH_REQUEST',
-    SEARCH_SUCCESS: 'SEARCH_SUCCESS',
-    SEARCH_FAILURE: 'SEARCH_FAILURE',
-}
