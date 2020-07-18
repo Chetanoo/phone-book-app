@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { counter } from './counter.reducer'
 import { subscriber } from './subscriber.reducer'
+import { alert } from './alert.reducer'
 
 export default combineReducers({
-  counter,
-  subscriber
+  subscriber,
+  alert
 })

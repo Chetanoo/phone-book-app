@@ -1,5 +1,6 @@
 import { subscriberConstants } from '../constants/subscriber.constants'
 import { searchServices } from '../services/subscriber.service'
+import { alertActions } from './alert.actions'
 
 export const search = requestData => {
   function request() {
@@ -17,7 +18,10 @@ export const search = requestData => {
 
     searchServices.search(requestData).then(
       data => dispatch(success(data)),
-      error => dispatch(failure(error.toString()))
+      error => {
+        dispatch(failure(error))
+        dispatch(alertActions.error(error))
+      }
     )
   }
 }
@@ -37,8 +41,14 @@ export const create = requestData => {
     dispatch(request())
 
     searchServices.create(requestData).then(
-      createdSubscriber => dispatch(success(createdSubscriber)),
-      error => dispatch(failure(error.toString()))
+      createdSubscriber => {
+        dispatch(success(createdSubscriber))
+        dispatch(alertActions.success(createdSubscriber.firstName))
+      },
+      error => {
+        dispatch(failure(error))
+        dispatch(alertActions.error(error))
+      }
     )
   }
 }

@@ -4,8 +4,9 @@ import { create } from '../../actions/subscriber.actions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Loading from '../../components/Loading'
+import 'react-notifications/lib/notifications.css'
 
-function CreateSubscriber(props) {
+function CreateSubscriber({ loading, create }) {
   const [newSubscriber, setNewSubscriber] = useState({
     firstName: '',
     secondName: '',
@@ -34,14 +35,12 @@ function CreateSubscriber(props) {
 
     setSubmitted(true)
 
-    props.create({
+    create({
       firstName: firstName.toLowerCase().trim(),
       secondName: secondName.toLowerCase().trim(),
       phoneNumber
     })
   }
-
-  const { loading, created, error } = props
 
   return (
     <div className="container">
@@ -78,16 +77,7 @@ function CreateSubscriber(props) {
         onClick={handleCreate}>
         Create
       </button>
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className="container">
-          <div className="row justify-content-center mt-5">
-            <strong>{created && `Subscriber has been created`}</strong>
-          </div>
-        </div>
-      )}
-      {error && <div>{error}</div>}
+      {loading ? <Loading /> : null}
     </div>
   )
 }

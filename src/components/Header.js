@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = props => (
   <div className="container">
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
-      <Link to="/search" className="navbar-brand">
+      <Link to="/" className="navbar-brand">
         PhoneBook
       </Link>
       <button
@@ -20,18 +20,13 @@ const Header = props => (
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/search" className="nav-link">
+            <Link to="/" className="nav-link">
               Search
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/create" className="nav-link">
               Create
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className="nav-link">
-              Home
             </Link>
           </li>
           <li className="nav-item">
